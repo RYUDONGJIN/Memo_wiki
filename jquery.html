@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<title>Insert title here</title>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#applyForm").submit(function(){
+			if(confirm("입력하신 이메일 주소가 맞습니까?")){
+				return true;
+			} else{
+				$("input:text[name='email']").focus();
+				return false;
+			}
+		});
+	});
+</script>
+</head>
+<body>
+	<form name="applyForm" action="/apply" method="post" id="applyForm">
+		id : <input name="id" type="text"><br>
+		email : <input name="email" type="text"><br>
+		<input type="submit">
+	</form>
+</body>
+</html>
